@@ -7,24 +7,24 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.*;
 
 /**
- * ½áµã¾àÀë¼ÆËãÀà
+ * ç»“ç‚¹è·ç¦»è®¡ç®—ç±»
  *
  * @author zhaojun.wzj
  * @version $Id GraphDistCalc.java, v 0.1 2018-10-17 13:10 zhaojun.wzj Exp $$
  */
 public class GraphDistCalc {
 
-    /** Â·¾¶·Ö¸ô·û */
+    /** è·¯å¾„åˆ†éš”ç¬¦ */
     private static final String PATH_SEP = "->";
 
-    /** s¼¯ºÏ£¬ÒÑ¼ÆËã½áµã */
+    /** sé›†åˆï¼Œå·²è®¡ç®—ç»“ç‚¹ */
     private TreeMap<String, GraphNode> sMap = new TreeMap<String, GraphNode>();
 
-    /** u¼¯ºÏ£¬´ı¼ÆËã½áµã */
+    /** ué›†åˆï¼Œå¾…è®¡ç®—ç»“ç‚¹ */
     private Map<String, GraphNode> uMap = Collections.synchronizedMap(new LinkedHashMap<String, GraphNode>());
 
     /**
-     * ¼ÆËã×î³¤Â·¾¶
+     * è®¡ç®—æœ€é•¿è·¯å¾„
      *
      * @param graph
      * @param nodeA
@@ -36,31 +36,31 @@ public class GraphDistCalc {
 
         String prevPath = nodeA.getName();
         while (uMap.size() > 0) {
-            // È¡uMapÖĞÈ¡Öµ×îĞ¡µÄ½ÚµãÃû³Æ
+            // å–uMapä¸­å–å€¼æœ€å°çš„èŠ‚ç‚¹åç§°
             String nodeName = getMinNodeFromUMap(uMap);
 
             GraphNode currNode = uMap.get(nodeName);
             sMap.put(currNode.getName(), currNode);
 
-            // ¸üĞÂ½Úµã·ÃÎÊÂ·¾¶
+            // æ›´æ–°èŠ‚ç‚¹è®¿é—®è·¯å¾„
             String sPath = currNode.getPath();
             if (StringUtils.isEmpty(sPath)) {
                 sPath = prevPath + PATH_SEP + currNode.getName();
             }
             currNode.setPath(sPath);
 
-            // Ìí¼Óµ½sMapºó£¬´ÓuMapÖĞÉ¾³ı
+            // æ·»åŠ åˆ°sMapåï¼Œä»uMapä¸­åˆ é™¤
             uMap.remove(currNode.getName());
 
-            // ÔËĞĞÊ±ÈÕÖ¾£¬¿ÉÉ¾³ı
+            // è¿è¡Œæ—¶æ—¥å¿—ï¼Œå¯åˆ é™¤
             System.out.println("\nsList:" + sMap);
             System.out.println("uList:" + uMap + "\n");
 
-            // ¸üĞÂ×Ó½áµã¾àÀë¡¢Â·¾¶£¬ÒÔ¼°¶Ô¿ÉÄÜ³öÏÖ»·Â·µÄ´¦Àí
+            // æ›´æ–°å­ç»“ç‚¹è·ç¦»ã€è·¯å¾„ï¼Œä»¥åŠå¯¹å¯èƒ½å‡ºç°ç¯è·¯çš„å¤„ç†
             updateDist(graph, uMap, currNode);
         }
 
-        // ¸ù¾İvalueÅÅĞò£¬´ÓsMapÖĞÈ¡³ö½á¹û
+        // æ ¹æ®valueæ’åºï¼Œä»sMapä¸­å–å‡ºç»“æœ
         if (sMap != null && sMap.size() > 0) {
             int maxValue = 0;
             String maxValNodeName = null;
@@ -84,14 +84,14 @@ public class GraphDistCalc {
     }
 
     /**
-     * ¸üĞÂ½ÚµãÂ·¾¶¼°¾àÀëµÈÊôĞÔ£¬ÒÔ¼°»·Â·¿ØÖÆ
+     * æ›´æ–°èŠ‚ç‚¹è·¯å¾„åŠè·ç¦»ç­‰å±æ€§ï¼Œä»¥åŠç¯è·¯æ§åˆ¶
      *
      * @param graph
      * @param sMap
      * @param currNode
      */
     private void updateDist(MutableGraph<GraphNode> graph, Map<String, GraphNode> sMap, GraphNode currNode) {
-        // ²éÕÒnode¶ÔÓ¦µÄºó¼Ì½Úµã
+        // æŸ¥æ‰¾nodeå¯¹åº”çš„åç»§èŠ‚ç‚¹
         Set<GraphNode> nodeASuccs = graph.successors(currNode);
         if (CollectionUtils.isEmpty(nodeASuccs)) {
             return;
@@ -118,7 +118,7 @@ public class GraphDistCalc {
     }
 
     /**
-     * ´Óu¼¯ºÏÖĞ»ñÈ¡×îĞ¡½Úµã
+     * ä»ué›†åˆä¸­è·å–æœ€å°èŠ‚ç‚¹
      *
      * @param uMap
      * @return
@@ -144,19 +144,19 @@ public class GraphDistCalc {
     }
 
     /**
-     * S¼¯ºÏ£¬U¼¯ºÏ³õÊ¼»¯
+     * Sé›†åˆï¼ŒUé›†åˆåˆå§‹åŒ–
      *
      * @param graph
      * @param graphNode
      * @throws Exception
      */
     private void initSUMap(MutableGraph<GraphNode> graph, GraphNode nodeA) throws Exception {
-        // ³õÊ¼»¯sMap
+        // åˆå§‹åŒ–sMap
         nodeA.setDist(nodeA.getValue());
         sMap.put(nodeA.getName(), nodeA);
 
 
-        // ³õÊ¼»¯uMap
+        // åˆå§‹åŒ–uMap
         Set<GraphNode> nodeASuccs = graph.successors(nodeA);
         Iterator<GraphNode> nodeASIt = nodeASuccs.iterator();
         while (nodeASIt.hasNext()) {

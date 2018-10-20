@@ -10,31 +10,31 @@ import java.util.Iterator;
 import java.util.Map;
 
 /**
- * mapÊı×é¹¤¾ßÀà£¬³Ö¾Ã»¯Îª×Ö·û´®
+ * mapæ•°ç»„å·¥å…·ç±»ï¼ŒæŒä¹…åŒ–ä¸ºå­—ç¬¦ä¸²
  *
- * ĞëÖª£º
+ * é¡»çŸ¥ï¼š
  *
  * @author zhaojun.wzj
  * @version $Id MapArrayUtil.java, v 0.1 2018-10-17 13:24 zhaojun.wzj Exp $$
  */
 public class MapArrayUtil {
 
-    /** Êı×éÔªËØ·Ö¸î·û */
+    /** æ•°ç»„å…ƒç´ åˆ†å‰²ç¬¦ */
     private static final String ARRAY_SEP = "\n";
 
-    /** ×ÖµäÔªËØ·Ö¸î·û */
+    /** å­—å…¸å…ƒç´ åˆ†å‰²ç¬¦ */
     private static final String DICT_SEP = ";";
 
-    /** key-value·Ö¸î·û */
+    /** key-valueåˆ†å‰²ç¬¦ */
     private static final String KEY_VALUE_SEP = "=";
 
-    /** ×Ö·û±àÂëUTF-8 */
+    /** å­—ç¬¦ç¼–ç UTF-8 */
     private static final String ENCODE_UTF8 = "UTF-8";
 
     /**
-     * ½«×Ö·û´®×ª»»Îª×ÖµäÊı×é
+     * å°†å­—ç¬¦ä¸²è½¬æ¢ä¸ºå­—å…¸æ•°ç»„
      * <p>
-     * ×Ö·û´®Îª¿Õ£¬»òÎª'\n'£¬·µ»Ønull
+     * å­—ç¬¦ä¸²ä¸ºç©ºï¼Œæˆ–ä¸º'\n'ï¼Œè¿”å›null
      *
      * @param text
      * @return
@@ -48,7 +48,7 @@ public class MapArrayUtil {
             return null;
         }
 
-        // ¶¨Òå·µ»Ø½á¹ûµÄmapÊı×é
+        // å®šä¹‰è¿”å›ç»“æœçš„mapæ•°ç»„
         Map[] mapArray = new HashMap[array.length];
 
         for (int i = 0; i < array.length; i++) {
@@ -77,7 +77,7 @@ public class MapArrayUtil {
     }
 
     /**
-     * keyÒÔ¼°value£¬ĞèÒª×ª»»Îªutf-8±àÂë£¬ÔÙ½øĞĞ³Ö¾Ã»¯£¬·ñÔò»áÓĞ×Ö·û¼¯ÎÊÌâ
+     * keyä»¥åŠvalueï¼Œéœ€è¦è½¬æ¢ä¸ºutf-8ç¼–ç ï¼Œå†è¿›è¡ŒæŒä¹…åŒ–ï¼Œå¦åˆ™ä¼šæœ‰å­—ç¬¦é›†é—®é¢˜
      *
      * @param array
      * @return
@@ -118,7 +118,7 @@ public class MapArrayUtil {
     }
 
     /**
-     * ×ª»»ÎªUTF8±àÂë
+     * è½¬æ¢ä¸ºUTF8ç¼–ç 
      * @param s
      * @return
      */
@@ -132,7 +132,7 @@ public class MapArrayUtil {
     }
 
     /**
-     * UTF8½âÂë
+     * UTF8è§£ç 
      * @param s
      * @return
      */

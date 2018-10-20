@@ -1,23 +1,23 @@
 package com.sssr.advance.graph;
 
 /**
- * 结点模型
+ * 缁撶偣妯″瀷
  *
  * @author zhaojun.wzj
  * @version $Id GraphNode.java, v 0.1 2018-10-17 12:27 zhaojun.wzj Exp $$
  */
 public class GraphNode {
 
-    /** 结点名称 */
+    /** 缁撶偣鍚嶇О */
     private String name;
 
-    /** 结点权重 */
+    /** 缁撶偣鏉冮噸 */
     private Integer value;
 
-    /** 结点距离 */
+    /** 缁撶偣璺濈 */
     private Integer dist;
 
-    /** 结点路径 */
+    /** 缁撶偣璺緞 */
     private String path;
 
     public GraphNode() {
