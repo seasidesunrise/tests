@@ -10,7 +10,7 @@
 .idea/**/dictionaries
 .idea/**/shelf
 target
-
+.DS_Store
 # Sensitive or high-churn files
 .idea/**/dataSources/
 .idea/**/dataSources.ids
