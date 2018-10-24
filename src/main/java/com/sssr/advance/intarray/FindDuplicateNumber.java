@@ -28,7 +28,7 @@ public class FindDuplicateNumber {
     }
 
     /**
-     * 对已排序的整数数组，找出某个整数数组中唯一的重复数字
+     * 对已排序的整数数组，找出某个整数数组中唯一的重复数字。使用折半的方式。
      *
      * @param intArr
      * @return

@@ -114,4 +114,22 @@ public class GraphDistTest {
         graph1.putEdge(nodeD, nodeB);
     }
 
+    public void CachedBnsClient(BnsClient client) {
+
+        this.backendClient = client;
+        new Thread() {
+            @Override public void run() {
+                for (; ; ) {
+                    refreshCache();
+                    try {
+                        Thread.sleep(60 * 1000);
+                    } catch (InterruptedException e) {
+                        logger.error("出错", e);
+                    }
+                }
+            }
+        };
+
+
+    }
 }
