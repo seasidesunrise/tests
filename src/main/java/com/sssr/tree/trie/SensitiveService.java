@@ -1,7 +1,3 @@
-/**
- * Alipay.com Inc.
- * Copyright (C) 2004-2018 All Rights Reserved.
- */
 package com.sssr.tree.trie;
 
 import java.util.ArrayList;
@@ -160,27 +156,6 @@ public class SensitiveService {
 
         System.out.println("cost time2：" + (end2 - start2) + " ms.");
 
-
-        // 3、使用正则表达式
-        StringBuilder regex = new StringBuilder();
-        for (int ii=0;ii<kws.size();ii++) {
-            regex.append(kws.get(i));
-            if (ii!=kws.size()-2) {
-                regex.append("|");
-            }
-        }
-        Pattern pattern = Pattern.compile(regex.toString());
-
-        long start3 = System.currentTimeMillis();
-        i = 0;
-        while (i++ < count) {
-            boolean check = Pattern.matches(srcText, pattern);
-            if (check) {
-                break;
-            }
-        }
-        long end3 = System.currentTimeMillis();
-        System.out.println("cost time3：" + (end3 - start3) + " ms.");
 
 
     }
