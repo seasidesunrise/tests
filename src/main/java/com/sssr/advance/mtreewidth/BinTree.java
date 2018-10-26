@@ -50,7 +50,7 @@ public class BinTree {
     }
 
     /**
-     * 前序遍历
+     * 鍓嶅簭閬嶅巻
      *
      * @param treeNode
      * @param depth
@@ -70,7 +70,7 @@ public class BinTree {
     }
 
     /**
-     * 中序遍历
+     * 涓簭閬嶅巻
      *
      * @param treeNode
      * @param depth
@@ -90,7 +90,7 @@ public class BinTree {
     }
 
     /**
-     * 后序遍历
+     * 鍚庡簭閬嶅巻
      *
      * @param treeNode
      * @param depth
@@ -110,7 +110,7 @@ public class BinTree {
     }
 
     /**
-     * 层序遍历
+     * 灞傚簭閬嶅巻
      *
      * @param treeNode
      * @param depth

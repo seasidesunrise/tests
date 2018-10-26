@@ -17,7 +17,7 @@ public class MTree {
     public static TreeNode nodeA = new TreeNode("A");
 
     private static void displayTree(TreeNode f, int level) {
-        // µÝ¹éÏÔÊ¾Ê÷
+        // é€’å½’æ˜¾ç¤ºæ ‘
         String preStr = "";
         for (int i = 0; i < level; i++) {
             preStr += "    ";
@@ -35,7 +35,7 @@ public class MTree {
     }
 
     /**
-     * ÐÞ¼ôÕâ¿Å¶à²æÊ÷
+     * ä¿®å‰ªè¿™é¢—å¤šå‰æ ‘
      *
      * @param f
      */

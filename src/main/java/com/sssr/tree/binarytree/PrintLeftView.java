@@ -20,10 +20,10 @@ public class PrintLeftView {
         }
     }
 
-    int layer = 0; //¶¨ÒåÒ»¸öÈ«¾Ö±äÁ¿£¬×î´ó²ãÊılayer,  depthÊÇµİ¹éµÄÉî¶È¡£
+    int layer = 0; //å®šä¹‰ä¸€ä¸ªå…¨å±€å˜é‡ï¼Œæœ€å¤§å±‚æ•°layer,  depthæ˜¯é€’å½’çš„æ·±åº¦ã€‚
 
     public void printleftVeiw(TreeNode root, int depth) {
-        if (depth > layer) { //µ±Éî¶È´óÓÚ²ã´ÎÊ±£¬¾Í´òÓ¡¡£  ÒòÎªµİ¹éÊÇÏÈ×óºóÓÒ£¬ËùÒÔÃ¿Ò»²ã µÚÒ»¸öÉî¶È´óÓÚ²ã´ÎµÄ½ÚµãÒ»¶¨Îª×óÊÓÍ¼µÄ½Úµã¡£
+        if (depth > layer) { //å½“æ·±åº¦å¤§äºå±‚æ¬¡æ—¶ï¼Œå°±æ‰“å°ã€‚  å› ä¸ºé€’å½’æ˜¯å…ˆå·¦åå³ï¼Œæ‰€ä»¥æ¯ä¸€å±‚ ç¬¬ä¸€ä¸ªæ·±åº¦å¤§äºå±‚æ¬¡çš„èŠ‚ç‚¹ä¸€å®šä¸ºå·¦è§†å›¾çš„èŠ‚ç‚¹ã€‚
             System.out.println(root.val);
             layer++;
         }
@@ -36,7 +36,7 @@ public class PrintLeftView {
     }
 
     public static void main(String[] args) {
-        // ¹¹½¨¶ş²æÊ÷
+        // æ„å»ºäºŒå‰æ ‘
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
         root.right = new TreeNode(3);

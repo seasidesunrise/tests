@@ -41,7 +41,7 @@ public class MTree {
     }
 
     /**
-     * 前序遍历
+     * 鍓嶅簭閬嶅巻
      *
      * @param treeNode
      * @param depth
@@ -58,7 +58,7 @@ public class MTree {
     }
 
     /**
-     * 中序遍历 LNR
+     * 涓簭閬嶅巻 LNR
      * @param treeNode
      * @param depth
      */
