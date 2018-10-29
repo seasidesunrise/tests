@@ -1,4 +1,4 @@
-package com.sssr.others.proxy;
+package com.sssr.others.proxy.dynamicproxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

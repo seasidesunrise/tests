@@ -1,4 +1,4 @@
-package com.sssr.others.proxy;
+package com.sssr.others.proxy.staticproxy;
 
 public class BusinessAgent implements Sell {
 

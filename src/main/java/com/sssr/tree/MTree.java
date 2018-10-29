@@ -1,7 +1,3 @@
-/**
- * Alipay.com Inc.
- * Copyright (C) 2004-2018 All Rights Reserved.
- */
 package com.sssr.tree;
 
 import java.util.Arrays;

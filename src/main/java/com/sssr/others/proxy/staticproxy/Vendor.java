@@ -1,7 +1,7 @@
-package com.sssr.others.proxy;
+package com.sssr.others.proxy.staticproxy;
 
 /**
- * 生产厂家
+ * 委托类，生产厂家
  */
 public class Vendor implements Sell {
 
