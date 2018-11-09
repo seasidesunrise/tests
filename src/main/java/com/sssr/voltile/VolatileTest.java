@@ -1,17 +1,21 @@
 package com.sssr.voltile;
 
 /**
- * volatile: 从heap内存加载到cpu高速缓存后，如果发生了变更，cpu高速缓存会reload。不适用volatile修饰的属性不会。以下是例子。
- * 与synchronize的区别是：synchronize提供原子性和可见性，volatile只提供可见性。
+ * volatile: 从heap内存加载到cpu高速缓存后，如果发生了变更，cpu高速缓存会reload。不
+ * 使用volatile修饰的属性不会。以下是例子。与synchronize的区别是：synchronize提供原
+ * 子性和可见性，volatile只提供可见性。
+ *
+ * 参考：http://www.cnblogs.com/dolphin0520/p/3920373.html
+ * 参考2：https://www.ibm.com/developerworks/cn/java/j-jtp06197.html
  *
  * @author zhaojun.wzj
  * @version $Id VolatileTest.java, v 0.1 2018-10-26 16:23 zhaojun.wzj Exp $$
  */
 public class VolatileTest extends Thread {
 
-    boolean flag = false;
+    boolean      flag = false;
 
-    int     i    = 0;
+    volatile int i    = 0;
 
     public void increase() {
         i++;
@@ -21,14 +25,23 @@ public class VolatileTest extends Thread {
         while (!flag) {
             i++;
         }
+        System.out.println("exit:" + i);
     }
 
     public static void main(String[] args) throws Exception {
         VolatileTest vt = new VolatileTest();
         vt.start();
-        Thread.sleep(2000);
+        Thread.sleep(100);
         vt.flag = true;
         System.out.println("stope:" + vt.i);
+
+        Thread.sleep(500);
+        System.out.println("end:" + vt.i);
+        Thread.sleep(500);
+        System.out.println("end2:" + vt.i);
+
+        Thread.sleep(500);
+        System.out.println("end3:" + vt.i);
 
         for (int i = 0; i < 10; i++) {
             new Thread() {
@@ -43,7 +56,7 @@ public class VolatileTest extends Thread {
         while (Thread.activeCount() > 1) {
             Thread.yield();
         }
-        System.out.println(vt.i);
+        System.out.println("end4:" + vt.i);
     }
 
 }
