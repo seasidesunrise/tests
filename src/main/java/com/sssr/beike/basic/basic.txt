@@ -1,0 +1,48 @@
+1、 说一下arrayList和linkedlist的区别
+ArrayList是基于数组的，获取具体成员快；linkedList基于链表。都是list，非线程安全集合类， 
+
+2、 你平时用到了那些集合
+arraylist、linkedlist，hashmap、concurrentHashMap、HashSet、
+
+3、 说一下hashMap的结构并且画一下简单的结构图
+hashmap: 数组+链表/红黑树（拉链法）
+
+4、 HashMap的put实现原理，循环遍历对比效率问题
+
+5、 写一下单例模式的实现
+/**
+ * double check 懒汉式单例
+ */
+public class LazySingleton {
+
+    private static volatile LazySingleton singleton;
+
+    private LazySingleton() {
+
+    }
+
+    private static LazySingleton getInstance() {
+        if (singleton == null) {
+            synchronized (LazySingleton.class) {
+                if (singleton == null) {
+                    singleton = new LazySingleton();
+                }
+            }
+        }
+
+        return singleton;
+    }
+
+}
+
+
+6、 对锁的理解
+解决线程安全的一种机制，如果没有锁，系统会进入一个非常杂乱的状态。结果也会不可预料。
+
+7、 如何解决线程安全的问题
+同步锁：乐观锁、悲观锁。
+
+8、 Mysql有几种引擎，你用过那些，它们的区别
+myisam以及innodb
+
+9、 Mysql如何创建索引，索引怎么样才能用上
